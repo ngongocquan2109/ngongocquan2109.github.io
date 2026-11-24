@@ -116,18 +116,21 @@ a { color: inherit; }
   font-family: var(--display); font-weight: 800; font-size: .78rem; line-height: 1.15; text-transform: uppercase; transform: rotate(-12deg);
 }
 
-/* Điện thoại: phần giới thiệu gọn hơn */
+/* Điện thoại: tên bên trái, ảnh bên phải, mọi thông tin nằm trong một màn hình */
 @media (max-width: 879px) {
-  .hero { min-height: 0; padding-top: 92px; padding-bottom: 36px; gap: 30px; }
-  .badge { margin-bottom: 16px; }
-  .hero__title { font-size: clamp(2.6rem, 14vw, 4.6rem); line-height: .95; }
-  .hero__title .line { display: inline; }
-  .line--accent { padding-left: 0; }
-  .hero__role { margin-top: 16px; font-size: clamp(1.15rem, 4.8vw, 1.6rem); }
-  .hero__sub { font-size: .95rem; margin-top: 10px; }
-  .hero__cta { margin-top: 20px; gap: 14px 22px; }
-  .hero__photo { width: min(50%, 210px); margin-left: 8px; }
-  .hero__sticker { width: 88px; height: 88px; font-size: .66rem; right: -34px; bottom: -16px; }
+  .hero {
+    min-height: 0; padding-top: 88px; padding-bottom: 32px;
+    grid-template-columns: 1.15fr .85fr; column-gap: 14px; row-gap: 0; align-content: start;
+  }
+  .hero__text { display: contents; }
+  .badge { grid-column: 1 / -1; grid-row: 1; justify-self: start; margin-bottom: 18px; }
+  .hero__title { grid-column: 1; grid-row: 2; align-self: center; font-size: clamp(2.3rem, 12.5vw, 4.2rem); line-height: .9; }
+  .hero__photo { grid-column: 2; grid-row: 2; align-self: center; justify-self: center; width: 100%; max-width: 190px; margin: 0 6px 18px 0; }
+  .hero__photo img { border-radius: 18px; box-shadow: 9px 9px 0 var(--coral); }
+  .hero__sticker { width: 74px; height: 74px; font-size: .56rem; right: -12px; bottom: -18px; }
+  .hero__role { grid-column: 1 / -1; grid-row: 3; margin-top: 10px; font-size: clamp(1.15rem, 5vw, 1.6rem); }
+  .hero__sub { grid-column: 1 / -1; grid-row: 4; font-size: .92rem; margin-top: 8px; }
+  .hero__cta { grid-column: 1 / -1; grid-row: 5; margin-top: 18px; gap: 12px 22px; }
 }
 
 @media (min-width: 880px) {
