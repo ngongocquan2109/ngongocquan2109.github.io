@@ -27,7 +27,8 @@
 .md {
   width: min(960px, 100% - 24px); max-height: calc(100dvh - 24px);
   padding: 0; border: 1px solid var(--md-line); border-radius: 20px;
-  background: var(--md-bg); color: var(--md-text); overflow: auto; position: relative;
+  background: var(--md-bg); color: var(--md-text); overflow: auto;
+  position: fixed; inset: 0; margin: auto; overscroll-behavior: contain;
 }
 .md::backdrop { background: rgba(5, 5, 12, .78); }
 .md__head {
